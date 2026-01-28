@@ -1,0 +1,49 @@
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+import { templateCompilerOptions } from '@tresjs/core'
+
+
+//proxy für backendaufrufe
+export default defineConfig({
+  server: {
+    host: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      },
+      '/stompbroker': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        ws: true,
+      },
+      '/persstomp': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        ws: true,
+      }
+    }
+  },
+
+
+  plugins: [
+    vue({
+      ...templateCompilerOptions
+    }),
+    vueDevTools(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
+  define: {
+    global: "window",
+  },
+})
+
+
