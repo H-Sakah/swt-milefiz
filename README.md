@@ -98,7 +98,8 @@ A detailed project poster was created to visualize:
 - gameplay concept
 - technical decisions
 
-The poster is included in this repository as a reference.
+📄 **Project Poster:**  
+[View SWT Milefiz Poster](docs/SWT_Milefiz_Poster.pdf)
 
 ---
 
