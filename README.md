@@ -1,35 +1,108 @@
-# 🎲 Milefiz 3D Multiplayer Game (SWT Projekt)
+# SWT Milefiz – Multiplayer Board Game (Web)
 
-Der aktuelle Stand dient als Startbasis mit einem einfachen Beispiel („Würfel-Button“ im Frontend).
+SWT Milefiz is a multiplayer, web-based board game inspired by the classic game  
+**“Malefiz”**.
 
-## frontend
+The project was developed as part of a software engineering project and focuses on
+clean architecture, real-time communication, and collaborative development.
 
-Der frontend-Ordner wurde mit `npm create vue@latest frontend` angelegt
-Es wurden noch keine Pakete (z.B. tres.js) nachinstalliert.
+The application consists of:
 
-### frontend starten
+- a **Spring Boot backend** handling game logic and real-time communication
+- a **modern web frontend** for interactive gameplay
 
-Nach dem Klonen des Repo:
+---
 
+## Tech Stack
+
+### Backend
+
+- Java 21
+- Spring Boot
+- WebSockets (real-time game state updates)
+- Gradle
+
+### Frontend
+
+- Node.js
+- Vite
+- Vue3
+- Three.js
+- JavaScript / TypeScript
+- HTML / CSS
+
+---
+
+## Architecture Overview
+
+- Backend and frontend are **strictly decoupled**
+- Real-time multiplayer communication via **WebSockets**
+- Game state and rules are managed server-side
+- Frontend consumes REST APIs and WebSocket events
+
+---
+
+## Local Development
+
+### Prerequisites
+
+- Java 21
+- Node.js (>= 18)
+- npm
+
+---
+
+### Backend
+
+From the project root:
+
+```bash
+./gradlew.bat bootRun
 ```
-cd frontend (auf /2025SWTPRO01)
+
+---
+
+### Frontend
+
+In a separate terminal:
+
+```bash
+cd frontend
 npm install
 npm run dev
 ```
 
-um der aktuelle Stand zu testen.
+---
 
-## Ausführbares Jar generieren
+## Project Context
 
-Mit `./gradlew bootJar` wird das Java-Projekt compiliert, das frontend gebaut,
-die generierten Frontend-Dateien (aus frontend/dist) in src/main/resources/public
-kopiert und das Ganze in ein ausführbares jar verpackt, das von Gradle in
-build/libs abgelegt wird.
+This project was developed in a **team environment** using:
 
-Die Anwendung sollte also startbar sein mit (bitte genauen Namen in build/libs checken):
+- Scrum methodology
+- iterative development cycles
+- collaborative version control and code reviews
 
-```
-java -jar build/libs/<DateiName.jar>
-```
+Special attention was given to:
 
-und dann wie gewohnt unter http://localhost:8080 abgerufen werden können.
+- clean separation of concerns
+- maintainability
+- cross-platform compatibility (Linux / Windows)
+
+---
+
+## Screenshots / Poster
+
+A detailed project poster was created to visualize:
+
+- system architecture
+- gameplay concept
+- technical decisions
+
+The poster is included in this repository as a reference.
+
+---
+
+## Author
+
+**Houssam Sakah**  
+Software Engineering / Media Informatics
