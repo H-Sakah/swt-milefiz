@@ -35,14 +35,14 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-task build_frontend(type: Exec) {
-  workingDir "${projectDir}/frontend"
-  commandLine "/bin/bash", "-c", "npm clean-install && npm audit fix && npm run build && rm -rf ../src/main/resources/public && cp -rv dist ../src/main/resources/public"
-}
+// task build_frontend(type: Exec) {
+//   workingDir "${projectDir}/frontend"
+//   commandLine "/bin/bash", "-c", "npm clean-install && npm audit fix && npm run build && rm -rf ../src/main/resources/public && cp -rv dist ../src/main/resources/public"
+// }
 
 sonar {
     properties {
-        property "sonar.token", "sqa_425cdb59aca65885484abc283137ade0666ac720" 
+        property "sonar.token", System.getenv("SONAR_TOKEN") 
 		property "sonar.host.url", "http://localhost:9000/sonar"
 
         property "sonar.sources", "src/main/java"
@@ -52,4 +52,4 @@ sonar {
     }
 }
 
-bootJar.dependsOn build_frontend
+// bootJar.dependsOn build_frontend
