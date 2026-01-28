@@ -40,6 +40,16 @@ The application consists of:
 - Game state and rules are managed server-side
 - Frontend consumes REST APIs and WebSocket events
 
+### Build Notes
+
+The frontend and backend are built and executed separately.
+
+The Gradle task responsible for building the frontend is configured for Unix-based
+systems and therefore disabled by default on Windows environments.
+Frontend builds are performed using the standard Node.js toolchain (`npm run dev` / `npm run build`).
+
+This keeps the project cross-platform and avoids OS-specific build dependencies.
+
 ---
 
 ## Local Development
