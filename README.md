@@ -99,7 +99,7 @@ A detailed project poster was created to visualize:
 - technical decisions
 
 📄 **Project Poster:**  
-[View SWT Milefiz Poster](docs/SWT_Milefiz_Poster.pdf)
+[View SWT Milefiz Poster](docs/SWTPro_MIlefiz_Poster.pdf)
 
 ---
 
